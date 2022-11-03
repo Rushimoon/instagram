@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "caption": "bike",
+      "image_url": "https://i.ibb.co/JnFYqtf/bike.jpg"
+    },
+    {
+      "id": "3",
+      "caption": "car",
+      "image_url": "https://i.ibb.co/529cFTW/car.jpg"
+    },
+    {
+      "id": "4",
+      "caption": "scorpio",
+      "image_url": "https://i.ibb.co/HnpqFqg/scorpio-n.jpg"
+    },
+    {
+      "id": "5",
+      "caption": "ship",
+      "image_url": "https://i.ibb.co/qpmXQdZ/ship.jpg"
+    },
+    {
+      "id": "6",
+      "caption": "plain",
+      "image_url": "https://i.ibb.co/qpmXQdZ/ship.jpg"
+    },
+    {
+      "id": "7",
+      "caption": "jawa",
+      "image_url": "https://i.ibb.co/x10FhM4/jawa-perak-2021-360x240.webp"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
