@@ -1,5 +1,4 @@
 import {navbar} from "./components/navbar.js"
-
  
 let navbar_html= navbar()
 let dis_navbar=document.getElementById("navbar")
@@ -9,6 +8,15 @@ let button=document.getElementById("create_btn")
 button.onclick=()=>{
     createPost()
 }
+
+let del_btn=document.getElementById("delete_btn")
+del_btn.onclick=()=>{
+    deletePost()
+}
+let caption_btn=document.getElementById("update_btn")
+  caption_btn.onclick=()=>{
+    captionupdate()
+  }
  
 let inp_image=document.getElementById("image")
  inp_image.onchange=()=>{
@@ -53,4 +61,39 @@ let inp_image=document.getElementById("image")
    
     image_url=data.data.display_url
     console.log("img",image_url)
+}
+
+let deletePost=async()=>{
+    let delete_id=document.getElementById("delete_id").value
+    let res= await fetch(`http://localhost:3000/posts/${delete_id}`,{
+     method:"DELETE",
+     headers:{
+    "Content-Type":"application-json",
+     }   
+    })
+let data=await res.json()
+console.log(data) 
+}
+let captionupdate=async()=>{
+    try{
+        let id= document.getElementById("update_id").value
+        let caption=document.getElementById("update_caption").value
+        let send_this={
+           caption:caption
+        }
+        let res=await fetch(`http://localhost:3000/posts/${id}`,{
+           method:"PATCH",
+           body:JSON.stringify(send_this),
+           headers:{
+               "Content-Type":"application/json"
+           }
+       
+       
+        })
+        let data=await res.json()
+        console.log(data)
+    }
+ catch{console.log("error")}
+// console.log(id,caption)
+
 }
